@@ -26,6 +26,8 @@ Finally, you'll need to create a Stripe webhook for the `identity.verification_s
 
 The system proposed here isn't decentralized, since it relies on both Stripe carrying out the verification and redacting personal details afterwards and the deployer, which as mentioned could update the code to remove the bit that redacts your details, or configure additional webhooks that save the users' data to a external database. Vercel can mitigate part of this risk by linking deployments with commits and allowing you to see the source of the currently deployed code, but this still doesn't protect you against additional webhooks, and it adds an additional trust vector on Vercel.
 
+There's also no checks in place to prevent someone minting unlimited NFTs from a single identity! I'm working to figure out the best way of doing this without leaking any user info.
+
 The contract has also not been audited.
 
 ## License
